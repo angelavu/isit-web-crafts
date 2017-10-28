@@ -4,8 +4,8 @@
 
 var fs = require('fs');
 var os = require('os');
-var utils = require('isit-code-lastname').elfUtils;
-var elfLog = require('isit-code-lastname').elfLog;
+var utils = require('isit-code-vu').elfUtils;
+var elfLog = require('isit-code-vu').elfLog;
 
 function getConfigName() {
     'use strict';
