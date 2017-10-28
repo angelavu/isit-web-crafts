@@ -1,7 +1,7 @@
 {
   "name": "isit-web-crafts-vu",
   "version": "1.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "test": "karma start",
     "start": "nodemon ./bin/www"
