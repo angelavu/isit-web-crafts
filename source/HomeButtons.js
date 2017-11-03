@@ -43,6 +43,8 @@ class HomeButtons extends React.Component {
                     style={buttonStyle}
                     primary={true}
                     onClick={this.makeImage}>{this.state.makeImage}</RaisedButton>
+                <p>Select a button.</p>
+                <p>This is a react component.</p>
             </div>
         </MuiThemeProvider>;
     };

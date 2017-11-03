@@ -17,19 +17,12 @@ requirejs.config({
         settings: 'javascripts/tools/settings',
         utilities: 'javascripts/tools/utilities',
         reactBundle: 'javascripts/bundle',
-        tinyPubSub: 'javascripts/tools/tiny-pub-sub'
-    },
-    shim: {
-        "tinyPubSub": {
-            deps: ["jquery"],
-            exports: "tinyPubSub"
-        }
     }
 });
 
 requirejs(['jquery'], function ($) {
     'use strict';
-    requirejs(['bootstrap', 'control', 'reactBundle', 'tinyPubSub'], function (bootstrap, control) {
+    requirejs(['bootstrap', 'control', 'reactBundle'], function (bootstrap, control) {
         control();
         $('.navbar-nav li.trigger-collapse a').click(function (event) {
             $('.navbar-collapse').collapse('hide');
