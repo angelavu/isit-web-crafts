@@ -1,6 +1,6 @@
 {
   "name": "isit-web-crafts-vu",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "scripts": {
     "test": "karma start",
