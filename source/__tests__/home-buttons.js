@@ -15,7 +15,9 @@ global.$ = jQuery;
 import '../fake-pub-sub';
 import {requestAnimationFrame} from '../temp-poly-fills';
 
-describe('WebCrafts Sanity Tests', function () {
+import: '../../public/javascripts/tools/tiny-pub-sub.js';
+
+describe('WebCrafts Home Buttons Tests', function () {
 
     'use strict';
 
@@ -23,13 +25,5 @@ describe('WebCrafts Sanity Tests', function () {
         expect(true).toBe(true);
     });
 
-    it('ReactHome renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<ReactHome/>, div);
-    });
-
-    it('HomeButtons renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<HomeButtons/>, div);
-    });
+    //Test 2: renders state of XXX after button click
 });

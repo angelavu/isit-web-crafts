@@ -15,7 +15,7 @@ global.$ = jQuery;
 import '../fake-pub-sub';
 import {requestAnimationFrame} from '../temp-poly-fills';
 
-describe('WebCrafts Sanity Tests', function () {
+describe('WebCrafts React Home Tests', function () {
 
     'use strict';
 
@@ -23,13 +23,10 @@ describe('WebCrafts Sanity Tests', function () {
         expect(true).toBe(true);
     });
 
-    it('ReactHome renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<ReactHome/>, div);
-    });
-
-    it('HomeButtons renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<HomeButtons/>, div);
+    it('renders default value of H1 tag', () => {
+        const wrapper = shallow(<ReactHome/>);
+        const h1tag = <h1>An H1 element in a React Component</h1>;
+        elfDebugEnzyme.getLast(wrapper, 'h1', true);
+        expect(wrapper.contains(h1tag)).toEqual(true);
     });
 });
