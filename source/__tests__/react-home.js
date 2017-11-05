@@ -12,7 +12,7 @@ import jQuery from 'jquery';
 
 global.jQuery = jQuery;
 global.$ = jQuery;
-import '../fake-pub-sub';
+//import '../fake-pub-sub';
 import {requestAnimationFrame} from '../temp-poly-fills';
 
 describe('WebCrafts React Home Tests', function () {

@@ -56,6 +56,13 @@
     "webpack-dev-server": "^2.9.4"
   },
   "jest": {
+    "verbose": true,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "ElfDebugEnzyme.js",
+      "tiny-pub-sub.js",
+      "temp-poly-fills.js"
+    ],
     "setupFiles": [
       "./source/setup-jest.js"
     ]
