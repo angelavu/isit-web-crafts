@@ -8,12 +8,12 @@ class MakeHtmlHomeButton extends React.Component {
 
         this.state = {
             home: 'Go Home'
-        }
+        };
     }
 
     goHome() {
         $.publish('home', {
-            message: "The user wants to go home."
+            message: 'The user wants to go home.'
         });
     }
 
@@ -30,7 +30,7 @@ class MakeHtmlHomeButton extends React.Component {
                 <p>This is the React MakeHtmlHomeButton component.</p>
             </div>
         </MuiThemeProvider>;
-    };
+    }
 }
 
 const buttonStyle = {

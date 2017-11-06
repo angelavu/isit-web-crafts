@@ -11,6 +11,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
     "cookie-parser": "~1.4.3",
     "debug": "^3.1.0",
     "express": "^4.16.1",
@@ -27,6 +28,7 @@
     "pug": "^2.0.0-rc.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "requirejs": "^2.3.5",
     "serve-favicon": "^2.4.5",
     "sharp": "^0.18.4",
     "webpack": "^3.8.1"
@@ -41,6 +43,7 @@
     "enzyme-adapter-react-16": "^1.0.3",
     "eslint": "^4.10.0",
     "eslint-plugin-react": "^7.4.0",
+    "eslint-plugin-requirejs": "^3.1.1",
     "grunt": "~1.0.1",
     "grunt-contrib-clean": "~1.1.0",
     "grunt-contrib-jade": "~1.0.0",

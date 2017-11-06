@@ -2,7 +2,7 @@
  * Created by charlie on 7/9/16.
  */
 
-define(['display', 'walking'], function(display, walking) {
+define(['display', 'walking'], function (display, walking) {
     'use strict';
 
     var radioWalkType = 'qSingle';
@@ -15,22 +15,22 @@ define(['display', 'walking'], function(display, walking) {
      * @property {String} mostRecentDate
      */
     function loadConfig() {
-        $.getJSON('/makers/config', function(configSummary) {
+        $.getJSON('/makers/config', function (configSummary) {
             display.clearConfig();
             $('#displayArea').html(JSON.stringify(configSummary, null, 4));
-            configSummary.siteDirs.forEach(function(dir) {
+            configSummary.siteDirs.forEach(function (dir) {
                 var showDir = configSummary.baseDir + dir;
                 $('#dirsToWalk').append('<option value="' + showDir + '">' + showDir + '</option>');
             });
-            configSummary.destinationDirs.forEach(function(dir) {
+            configSummary.destinationDirs.forEach(function (dir) {
                 $('#destinationDirs').append('<option value="' + dir + '">' + dir + '</option>');
             });
             $('#mostRecentDate').html(configSummary.mostRecentDate);
-        }).done(function() {
+        }).done(function () {
             display.showDebug('Config loaded second success');
-        }).fail(function(jqxhr, textStatus, error) {
+        }).fail(function (jqxhr, textStatus, error) {
             display.showDebug('Config load error: ' + jqxhr.status + ' ' + textStatus + ' ' + error);
-        }).always(function() {
+        }).always(function () {
             display.showDebug('Config loaded complete');
         });
     }
@@ -41,16 +41,16 @@ define(['display', 'walking'], function(display, walking) {
 
     function publishReactMakeHtml() {
         $.publish('reactMakeHtml', {
-            message : "Publisher Constructor Called"
+            message: 'Publisher Constructor Called'
         });
     }
 
     return {
-        init: function() {
-            $('#pageLoad').load('/makers/makeHtml', function() {
+        init: function () {
+            $('#pageLoad').load('/makers/makeHtml', function () {
                 $('#loadConfig').click(loadConfig);
                 $('#walk').click(walk);
-                $('#walktype').change(function() {
+                $('#walktype').change(function () {
                     radioWalkType = $('input[name=walktype]:checked').attr('id');
                 });
                 walking.configurePageOne();

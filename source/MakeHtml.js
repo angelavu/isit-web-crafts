@@ -12,7 +12,7 @@ class MakeHtml extends React.Component {
                 <MakeHtmlDropDowns/>
             </div>
         </MuiThemeProvider>;
-    };
+    }
 }
 
 export default MakeHtml;
