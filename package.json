@@ -9,6 +9,7 @@
     "bundle": "node_modules/.bin/webpack --watch"
   },
   "dependencies": {
+    "babel-preset-stage-0": "^6.24.1",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
