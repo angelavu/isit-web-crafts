@@ -4,14 +4,14 @@ var webpack = require('webpack');
 module.exports = {
     entry: './source/react-main.js',
     output: {path: __dirname, filename: './public/javascripts/bundle.js'},
-    devtool: "source-map",
+    devtool: 'source-map',
     module: {
         loaders: [
             {
                 test: /.js?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
-                query: {presets: ['env', 'react']}
+                query: {presets: ['env', 'stage-0', 'react']}
             }
         ]
     },
