@@ -8,7 +8,7 @@ export default class ReactHome extends React.Component {
                 <h1>An H1 element in a React Component</h1>
                 <HomeButtons/>
             </div>
-        )
+        );
 
     }
 }

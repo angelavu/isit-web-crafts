@@ -1,6 +1,7 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
+import '../public/javascripts/tools/tiny-pub-sub.js';
 
 class MakeHtmlHomeButton extends React.Component {
     constructor() {
@@ -22,6 +23,7 @@ class MakeHtmlHomeButton extends React.Component {
         return <MuiThemeProvider>
             <div>
                 <RaisedButton
+                    //id="homey" ****
                     style={buttonStyle}
                     primary={true}
                     onClick={this.goHome}>

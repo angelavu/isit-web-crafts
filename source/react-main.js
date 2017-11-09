@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactHome from './ReactHome';
-import MakeHtml from './MakeHtmlHomeButton';
+//import MakeHtml from './MakeHtmlHomeButton'; no need- called in MakeH and MakeI
+import MakeHtml from './MakeHtml'; //import MakeHtml main component
+import MakeImage from './MakeImages'; //import MakeImage main component
 
 let homeDiv = null;
 
 function reactMakeHtml(event, customMessage) {
     ReactDOM.render(<MakeHtml/>, homeDiv);
+}
+
+function reactMakeImage(event, customMessage) {
+    ReactDOM.render(<MakeImage/>, homeDiv);
 }
 
 function reactHome() {
@@ -21,6 +27,7 @@ function home() {
 $(document).ready(function () {
     homeDiv = document.getElementById('home');
     $.subscribe('reactMakeHtml', reactMakeHtml);
+    $.subscribe('reactMakeImage', reactMakeImage);
     $.subscribe('home', reactHome);
     home();
 });
