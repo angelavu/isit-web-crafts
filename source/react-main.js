@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import ReactHome from './ReactHome';
 //import MakeHtml from './MakeHtmlHomeButton'; no need- called in MakeH and MakeI
 import MakeHtml from './MakeHtml'; //import MakeHtml main component
-import MakeImage from './MakeImages'; //import MakeImage main component
+import MakeImage from './MakeImage'; //import MakeImage main component
 
 let homeDiv = null;
 
@@ -21,7 +21,7 @@ function reactHome() {
 }
 
 function home() {
-    ReactDOM.render(<ReactHome/>, homeDiv);
+    ReactDOM.render(<div><ReactHome/></div>, homeDiv);
 }
 
 $(document).ready(function () {

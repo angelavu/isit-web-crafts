@@ -1,20 +1,19 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import MakeHtmlDropDowns from './MakeHtmlDropDowns';
 import MakeHtmlHomeButton from './MakeHtmlHomeButton';
+import MakeImageButtons from './MakeImageButtons';
 
-class MakeHtml extends React.Component {
+class MakeImage extends React.Component {
     render() {
-
         return (
             <MuiThemeProvider>
                 <div>
                     <MakeHtmlHomeButton/>
-                    <MakeHtmlDropDowns/>
+                    <MakeImageButtons/>
                 </div>
             </MuiThemeProvider>
         );
     }
 }
 
-export default MakeHtml;
+export default MakeImage;

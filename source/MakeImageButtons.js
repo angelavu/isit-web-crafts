@@ -6,6 +6,7 @@ import 'whatwg-fetch';
 
 class MakeImageButtons extends React.Component {
 
+    //!!!!!!!!NOT FOUND
 
     constructor() {
         super();
@@ -57,32 +58,31 @@ class MakeImageButtons extends React.Component {
     }
 
     render() {
-        return <MuiThemeProvider>
-            <div>
-                <h1>Pix Picker</h1>
-                <p>This is the MakeImageButton component.</p>
-                <br/>
-                <MakeHtmlHomeButton/>
-                <br/>
-                <RaisedButton
-                    id="createImageButton"
-                    style={buttonStyle}
-                    primary={true}
-                    onClick={this.markdownCreateImages}
-                >
-                    {this.state.createImage}
-                </RaisedButton>
-                <RaisedButton
-                    id="deleteMarkdownButton"
-                    style={buttonStyle}
-                    primary={true}
-                    onClick={this.markdownDeleteMarkdown}
-                >
-                    {this.state.deleteMarkdown}
-                </RaisedButton>
-                <pre>{JSON.stringify(this.state.results, null, 4)}</pre>
-            </div>
-        </MuiThemeProvider>;
+        return (
+            <MuiThemeProvider>
+                <div>
+                    <h1>Pix Picker</h1>
+                    <p>This is the MakeImageButton component.</p>
+                    <RaisedButton
+                        id="createImageButton"
+                        style={buttonStyle}
+                        primary={true}
+                        onClick={this.markdownCreateImages}
+                    >
+                        {this.state.createImage}
+                    </RaisedButton>
+                    <RaisedButton
+                        id="deleteMarkdownButton"
+                        style={buttonStyle}
+                        primary={true}
+                        onClick={this.markdownDeleteMarkdown}
+                    >
+                        {this.state.deleteMarkdown}
+                    </RaisedButton>
+                    <pre>{JSON.stringify(this.state.results, null, 4)}</pre>
+                </div>
+            </MuiThemeProvider>
+        );
     }
 }
 

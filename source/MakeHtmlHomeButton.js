@@ -19,19 +19,20 @@ class MakeHtmlHomeButton extends React.Component {
     }
 
     render() {
-
-        return <MuiThemeProvider>
-            <div>
-                <RaisedButton
-                    //id="homey" ****
-                    style={buttonStyle}
-                    primary={true}
-                    onClick={this.goHome}>
-                    {this.state.home}
-                </RaisedButton>
-                <p>This is the React MakeHtmlHomeButton component.</p>
-            </div>
-        </MuiThemeProvider>;
+        return (
+            <MuiThemeProvider>
+                <div>
+                    <RaisedButton
+                        id="home"
+                        style={buttonStyle}
+                        primary={true}
+                        onClick={this.goHome}>
+                        {this.state.home}
+                    </RaisedButton>
+                    <p>This is the React MakeHtmlHomeButton component.</p>
+                </div>
+            </MuiThemeProvider>
+        );
     }
 }
 

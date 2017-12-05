@@ -4,7 +4,7 @@
 
 define(['display', 'utilities'], function(display, utilities) {
     'use strict';
-    
+
     function ImagePicker() {
 
     }

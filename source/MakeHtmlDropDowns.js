@@ -15,8 +15,6 @@ const siteDirs = [];
 const destDirs = [];
 
 class MakeHtmlDropDowns extends React.Component {
-
-
     constructor() {
         super();
 
@@ -36,16 +34,14 @@ class MakeHtmlDropDowns extends React.Component {
     handleSiteDir(event, index, value) {
         this.setState({
             value: value,
-            siteDir: event.target.innerHTML,
-            destDir: destDirs[value].props.primaryText
+            siteDir: event.target.innerHTML
         });
     }
 
     handleDestinationDir(event, index, value) {
         this.setState({
             value: value,
-            siteDir: siteDirs[value].props.primaryText,
-            destDir: event.target.innerHTML
+            destDir: destDirs[value].props.primaryText
         });
     }
 
@@ -58,7 +54,7 @@ class MakeHtmlDropDowns extends React.Component {
      * @property {String} mostRecentDate
      */
     loadConfig() {
-        const that = this;
+        //const that = this;
         fetch('/makers/config')
             .then(function (response) {
                 return response.json();
@@ -72,17 +68,14 @@ class MakeHtmlDropDowns extends React.Component {
                     siteDirs.push(<MenuItem value={index} key={index} primaryText={showDir}/>);
                 });
                 configSummary.destDirs.forEach(function (dir, index) {
-                    const showDir = configSummary.baseDir + dir;
+                    //const showDir = configSummary.baseDir + dir;
+                    const showDir = dir;
                     destDirs.push(<MenuItem value={index} key={index} primaryText={showDir}/>);
                 });
             })
             .catch(function (ex) {
                 console.log('parsing failed', ex);
             });
-    }
-
-    componentDidMount() {
-        this.loadConfig();
     }
 
     generateHtml() {
@@ -107,42 +100,51 @@ class MakeHtmlDropDowns extends React.Component {
             });
     }
 
+    componentDidMount() {
+        this.loadConfig();
+    }
+
     render() {
-        return <MuiThemeProvider>
-            <div>
-                <h1>Home Page</h1>
-                <DropDownMenu
-                    value={this.state.value}
-                    onChange={this.handleSiteDir}
-                    style={styles.customWidth}
-                    autoWidth={true}
-                >
-                    {siteDirs}
-                </DropDownMenu>
-                <br/>
-                <DropDownMenu
-                    value={this.state.value}
-                    onChange={this.handleDestinationDir}
-                    style={styles.customWidth}
-                    autoWidth={true}
-                >
-                    {destDirs}
-                </DropDownMenu>
-                <p>This is a DropDown component.</p>
-                <br/>
-                <RaisedButton
-                    style={buttonStyle}
-                    primary={true}
-                    onClick={this.generateHtml}>
-                    {this.state.walk}
-                </RaisedButton>
-                <pre>{JSON.stringify(this.state.configSummary, null, 4)}</pre>
-            </div>
-        </MuiThemeProvider>;
+        return (
+            <MuiThemeProvider>
+                <div>
+                    <h1>Home Page</h1>
+                    <DropDownMenu
+                        id="siteDirs"
+                        value={this.state.value}
+                        onChange={this.handleSiteDir}
+                        style={styles.customWidth}
+                        autoWidth={true}
+                    >
+                        {siteDirs}
+                    </DropDownMenu>
+                    <br/>
+                    <DropDownMenu
+                        id="destDirs"
+                        value={this.state.value}
+                        onChange={this.handleDestinationDir}
+                        style={styles.customWidth}
+                        autoWidth={true}
+                    >
+                        {destDirs}
+                    </DropDownMenu>
+                    <p>This is the MakeHtmlDropDowns component.</p>
+                    <br/>
+                    <RaisedButton
+                        id="walk"
+                        style={buttonStyle}
+                        primary={true}
+                        onClick={this.generateHtml}>
+                        {this.state.walk}
+                    </RaisedButton>
+                    <pre>{JSON.stringify(this.state.configSummary, null, 4)}</pre>
+                </div>
+            </MuiThemeProvider>
+        );
     }
 }
 
-var buttonStyle = {
+const buttonStyle = {
     margin: '15px'
 };
 
