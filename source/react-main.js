@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactHome from './ReactHome';
-//import MakeHtml from './MakeHtmlHomeButton'; no need- called in MakeH and MakeI
 import MakeHtml from './MakeHtml'; //import MakeHtml main component
 import MakeImage from './MakeImage'; //import MakeImage main component
 

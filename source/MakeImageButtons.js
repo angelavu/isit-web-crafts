@@ -1,12 +1,9 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-import MakeHtmlHomeButton from './MakeHtmlHomeButton';
 import 'whatwg-fetch';
 
 class MakeImageButtons extends React.Component {
-
-    //!!!!!!!!NOT FOUND
 
     constructor() {
         super();
