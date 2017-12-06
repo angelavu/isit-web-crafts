@@ -20,11 +20,11 @@ requirejs.config({
     }
 });
 
-requirejs(['jquery'], function ($) {
+requirejs(['jquery'], function($) {
     'use strict';
-    requirejs(['bootstrap', 'control', 'reactBundle'], function (bootstrap, control) {
+    requirejs(['bootstrap', 'control', 'reactBundle'], function(bootstrap, control) {
         control();
-        $('.navbar-nav li.trigger-collapse a').click(function (event) {
+        $('.navbar-nav li.trigger-collapse a').click(function(event) {
             $('.navbar-collapse').collapse('hide');
         });
     });

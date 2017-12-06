@@ -1,4 +1,4 @@
-define(['makeHtml', 'makeImage'], function (makeHtml, makeImage) {
+define(['makeHtml', 'makeImage'], function(makeHtml, makeImage) {
 
     'use strict';
 
