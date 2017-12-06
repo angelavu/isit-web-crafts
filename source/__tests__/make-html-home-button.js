@@ -4,9 +4,9 @@ import MakeHtmlHomeButton from '../MakeHtmlHomeButton';
 import {configure, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import '../../public/javascripts/tools/tiny-pub-sub.js';
-
 configure({adapter: new Adapter()});
-
+import ElfDebugEnzyme from '../ElfDebugEnzyme';
+const elfDebugEnzyme = new ElfDebugEnzyme(true, 'sanity');
 
 describe('WebCrafts MakeHtmlHomeButton Tests', function () {
 
@@ -14,11 +14,6 @@ describe('WebCrafts MakeHtmlHomeButton Tests', function () {
 
     it('expects true to be true', function () {
         expect(true).toBe(true);
-    });
-
-    it('loads component MakeHtmlHomeButton without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<MakeHtmlHomeButton/>, div);
     });
 
     it('publishes home button event after button click', () => {
@@ -33,5 +28,12 @@ describe('WebCrafts MakeHtmlHomeButton Tests', function () {
         });
         wrapper.find('#home').simulate('click');
         expect(subscriptionCalled).toBeTruthy();
+    });
+
+    it('renders p tag with home button instructions', () => {
+        const wrapper = shallow(<MakeHtmlHomeButton />);
+        const h1tag = <p>Select button to return to the home page.</p>;
+        elfDebugEnzyme.getLast(wrapper, 'p', true);
+        expect(wrapper.contains(h1tag)).toEqual(true);
     });
 });

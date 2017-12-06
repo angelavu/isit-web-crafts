@@ -15,18 +15,10 @@ describe('WebCrafts Home Buttons Tests', function () {
         expect(true).toBe(true);
     });
 
-    it('loads component HomeButtons without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<HomeButtons/>, div);
-    });
-
-    //Test 2: renders state of XXX after button click
     it('publishes clientMakeHtml event after button click', () => {
-        const wrapper = shallow(<HomeButtons/>);
+        const wrapper = shallow(<HomeButtons />);
         let subscriptionCalled = false;
         $.subscribe('clientMakeHtml', (event, target) => {
-            console.log(JSON.stringify(event, null, 4));
-            console.log(target);
             expect(event.type).toBe('clientMakeHtml');
             expect(target.message).toBe('The user wants to makeHtml.');
             subscriptionCalled = true;
@@ -35,17 +27,12 @@ describe('WebCrafts Home Buttons Tests', function () {
         expect(subscriptionCalled).toBeTruthy();
     });
 
-    it('publishes clientMakeImage event after button click', () => {
-        const wrapper = shallow(<HomeButtons/>);
-        let subscriptionCalled = false;
-        $.subscribe('clientMakeImage', (event, target) => {
-            console.log(JSON.stringify(event, null, 4));
-            console.log(target);
-            expect(event.type).toBe('clientMakeImage');
-            expect(target.message).toBe('The user wants to makeImage.');
-            subscriptionCalled = true;
+    it('publishes clientMakeHtml event after button click with done', done => {
+        const wrapper = shallow(<HomeButtons />);
+        $.subscribe('clientMakeHtml', (event, target) => {
+            expect(target.message).toBe('The user wants to makeHtml.');
+            done();
         });
-        wrapper.find('#makeImage').simulate('click');
-        expect(subscriptionCalled).toBeTruthy();
+        wrapper.find('#makeHtml').simulate('click');
     });
 });

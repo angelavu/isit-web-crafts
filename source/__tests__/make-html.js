@@ -17,11 +17,6 @@ describe('WebCrafts MakeHtml Tests', function () {
         expect(true).toBe(true);
     });
 
-    it('loads component MakeHtml without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<MakeHtml/>, div);
-    });
-
     it('expects MakeHtmlHomeButton in MakeHtml', () => {
         const wrapper = shallow(<MakeHtml/>);
         const component = <MakeHtmlHomeButton/>;

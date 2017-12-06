@@ -58,8 +58,6 @@ class MakeImageButtons extends React.Component {
         return (
             <MuiThemeProvider>
                 <div>
-                    <h1>Pix Picker</h1>
-                    <p>This is the MakeImageButton component.</p>
                     <RaisedButton
                         id="createImageButton"
                         style={buttonStyle}
@@ -76,6 +74,7 @@ class MakeImageButtons extends React.Component {
                     >
                         {this.state.deleteMarkdown}
                     </RaisedButton>
+                    <p>This is the MakeImageButton component.</p>
                     <pre>{JSON.stringify(this.state.results, null, 4)}</pre>
                 </div>
             </MuiThemeProvider>
@@ -83,7 +82,7 @@ class MakeImageButtons extends React.Component {
     }
 }
 
-var buttonStyle = {
+const buttonStyle = {
     margin: '15px'
 };
 

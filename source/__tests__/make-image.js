@@ -18,11 +18,6 @@ describe('WebCrafts MakeImage Tests', function () {
         expect(true).toBe(true);
     });
 
-    it('loads component MakeImage without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<MakeImage/>, div);
-    });
-
     it('expects MakeHtmlHomeButton in MakeImage', () => {
         const wrapper = shallow(<MakeImage/>);
         const component = <MakeHtmlHomeButton/>;
@@ -35,5 +30,13 @@ describe('WebCrafts MakeImage Tests', function () {
         const component = <MakeImageButtons/>;
         elfDebugEnzyme.getAll(wrapper, true);
         expect(wrapper.contains(component)).toEqual(true);
+    });
+
+    //Added for JestMocks
+    it('renders default value of H1 tag', () => {
+        const wrapper = shallow(<MakeImage />);
+        const h1tag = <h1>Pix Picker</h1>;
+        elfDebugEnzyme.getLast(wrapper, 'h1', true);
+        expect(wrapper.contains(h1tag)).toEqual(true);
     });
 });

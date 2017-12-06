@@ -16,11 +16,6 @@ describe('WebCrafts MakeImageButtons Tests', function () {
         expect(true).toBe(true);
     });
 
-    it('loads component MakeImageButtons without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<MakeImageButtons/>, div);
-    });
-
     it('renders component MakeImageButtons p tag', () => {
         const wrapper = shallow(<MakeImageButtons/>);
         const ptag = <p>This is the MakeImageButton component.</p>;

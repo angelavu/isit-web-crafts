@@ -110,7 +110,7 @@ class MakeHtmlDropDowns extends React.Component {
         return (
             <MuiThemeProvider>
                 <div>
-                    <h1>Home Page</h1>
+                    <h1>Render Markdown as HTML</h1>
                     <DropDownMenu
                         id="siteDirs"
                         value={this.state.value}
