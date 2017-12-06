@@ -34,14 +34,16 @@ class MakeHtmlDropDowns extends React.Component {
     handleSiteDir(event, index, value) {
         this.setState({
             value: value,
-            siteDir: event.target.innerHTML
+            siteDir: event.target.innerHTML,
+            destDir: destDirs[value].props.primaryText
         });
     }
 
     handleDestinationDir(event, index, value) {
         this.setState({
             value: value,
-            destDir: destDirs[value].props.primaryText
+            siteDir: siteDirs[value].props.primaryText,
+            destDir: event.target.innerHTML
         });
     }
 
@@ -54,7 +56,7 @@ class MakeHtmlDropDowns extends React.Component {
      * @property {String} mostRecentDate
      */
     loadConfig() {
-        //const that = this;
+        const that = this;
         fetch('/makers/config')
             .then(function (response) {
                 return response.json();
@@ -67,7 +69,7 @@ class MakeHtmlDropDowns extends React.Component {
                     const showDir = configSummary.baseDir + dir;
                     siteDirs.push(<MenuItem value={index} key={index} primaryText={showDir}/>);
                 });
-                configSummary.destDirs.forEach(function (dir, index) {
+                configSummary.destinationDirs.forEach(function (dir, index) {
                     //const showDir = configSummary.baseDir + dir;
                     const showDir = dir;
                     destDirs.push(<MenuItem value={index} key={index} primaryText={showDir}/>);
