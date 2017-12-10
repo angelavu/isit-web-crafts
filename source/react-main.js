@@ -8,7 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 let store = createStore(fireReducer);
 
-$(document).ready(function() {
+window.onload = function() {
     try {
         const root = document.getElementById('home');
         ReactDOM.render(
@@ -25,4 +25,4 @@ $(document).ready(function() {
         console.error(e);
         document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
     }
-});
+};
