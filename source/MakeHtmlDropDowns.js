@@ -132,14 +132,32 @@ class MakeHtmlDropDowns extends React.Component {
                     </DropDownMenu>
                     <p>This is the MakeHtmlDropDowns component.</p>
                     <br/>
-                    <RaisedButton
+                    {/*RaisedButton
                         id="walk"
                         style={buttonStyle}
                         primary={true}
                         onClick={this.generateHtml}>
                         {this.state.walk}
                     </RaisedButton>
-                    <pre>{JSON.stringify(this.state.configSummary, null, 4)}</pre>
+                    <pre>{JSON.stringify(this.state.configSummary, null, 4)}</pre>*/}
+
+                    <RaisedButton
+                        id="generate"
+                        style={buttonStyle}
+                        primary={true}
+                        onClick={this.generateHtml}
+                    >
+                        {this.state.walk}
+                    </RaisedButton>
+
+                    <pre id="configSummary">{this.state.configSummary}</pre>
+                    {/*for tests*/}
+                    {/*<pre id="configSummary">
+                        [
+                        &quot;/home/charlie/Git/CloudNotes/tips/Summary.html&quot;,
+                        &quot;/home/charlie/Git/CloudNotes/tips/master-list.html&quot;
+                        ]
+                    </pre>*/}
                 </div>
             </MuiThemeProvider>
         );
