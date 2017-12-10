@@ -15,7 +15,7 @@ class App extends Component {
     }
 
     insertConfig() {
-        fetch('/get-config')
+        fetch('/makers/get-config')
             .then(function (response) {
                 return response.json();
             })
@@ -32,23 +32,23 @@ class App extends Component {
         return (
 
             <div>
-              <p>React Stuff</p>
+                <p>React Stuff</p>
 
-              <RaisedButton
-                  label='Insert Config'
-                  style={buttonStyle}
-                  primary={true}
-                  onClick={this.insertConfig}
-              />
+                <RaisedButton
+                    label='Insert Config'
+                    style={buttonStyle}
+                    primary={true}
+                    onClick={this.insertConfig}
+                />
 
-              <RaisedButton
-                  label='Update user'
-                  style={buttonStyle}
-                  primary={true}
-                  onClick={this.setConfig}
-              />
+                <RaisedButton
+                    label='Update user'
+                    style={buttonStyle}
+                    primary={true}
+                    onClick={this.setConfig}
+                />
 
-              <ElvenLogin />
+                <ElvenLogin/>
             </div>
 
         );
@@ -60,7 +60,7 @@ const mapStateToProps = (state) => {
         loggedIn: state.loggedIn,
         signInLabel: state.signInLabel,
         configured: state.configured
-    }
+    };
 };
 
 App = connect(mapStateToProps)(App);

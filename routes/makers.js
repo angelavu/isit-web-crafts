@@ -30,7 +30,7 @@ router.get('/pixPicker', function(request, response) {
     });
 });
 
-router.get('/config', function(request, response) {
+/*router.get('/config', function(request, response) {
     'use strict';
     config.useLocalConfig = false;
     var user = 'calvert';
@@ -54,6 +54,21 @@ router.get('/config', function(request, response) {
         .catch(function(err) {
             throw err;
         });
+});*/
+
+router.get('/get-config', function(req, res, next) { 'use strict';
+    try {
+        config.useLocalConfig = false;
+        config.loadAsync()
+            .then(function (configuration) {
+                res.send({ configuration: configuration });
+            })
+            .catch(function (err) {
+                throw err
+            })
+    } catch(e) {
+        throw new Error(e);
+    }
 });
 
 router.get('/makeImages', function(request, response) {
