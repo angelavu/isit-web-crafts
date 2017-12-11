@@ -26,12 +26,6 @@ class Main extends Component {
             'open': false,
             'component': null
         };
-
-        this.handleToggle = this.handleToggle.bind(this);
-        this.handleShowLogin = this.handleShowLogin.bind(this);
-        this.handleShowUsers = this.handleShowUsers.bind(this);
-        this.handleMakeHtml = this.handleMakeHtml.bind(this);
-        this.handleMakeImage = this.handleMakeImage.bind(this);
     }
 
     handleToggle = () => this.setState({
@@ -90,7 +84,7 @@ class Main extends Component {
             <div>
                 <AppBar
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
-                    title="Concurrently Express React"
+                    title="WebCrafts"
                     onLeftIconButtonTouchTap={this.handleToggle}
                 />
 

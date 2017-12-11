@@ -15,7 +15,7 @@ const fireReducer = (state = initialState, action) => {
             userName: action.userName
         };
     case 'GET_LOGIN_STATUS':
-        return {...state };
+        return {...state};
     case 'LOGIN_STATUS':
         return {
             ...state,
@@ -24,7 +24,7 @@ const fireReducer = (state = initialState, action) => {
         };
     default:
         return state;
-}
+    }
 };
 
 export default fireReducer;

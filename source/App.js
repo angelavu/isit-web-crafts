@@ -11,7 +11,7 @@ const buttonStyle = {
 class App extends Component {
 
     setConfig() {
-        firebase.database().ref('/configuration/users/vu/base-dir').set('/home/vu');
+        firebase.database().ref('/configuration/users/vu/base-dir').set('/home/bcuser');
     }
 
     insertConfig() {
@@ -60,7 +60,7 @@ const mapStateToProps = (state) => {
         loggedIn: state.loggedIn,
         signInLabel: state.signInLabel,
         configured: state.configured
-    }
+    };
 };
 
 App = connect(mapStateToProps)(App);

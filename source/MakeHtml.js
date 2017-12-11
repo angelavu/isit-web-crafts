@@ -1,7 +1,6 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import MakeHtmlDropDowns from './MakeHtmlDropDowns';
-import MakeHtmlHomeButton from './MakeHtmlHomeButton';
 
 class MakeHtml extends React.Component {
     render() {
@@ -9,7 +8,6 @@ class MakeHtml extends React.Component {
         return (
             <MuiThemeProvider>
                 <div>
-                    <MakeHtmlHomeButton/>
                     <MakeHtmlDropDowns/>
                 </div>
             </MuiThemeProvider>

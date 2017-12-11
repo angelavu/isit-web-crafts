@@ -24,7 +24,7 @@ class ShowUsers extends Component {
                     users.push(userName);
                 }
                 that.setState({users: users});
-            })
+            });
     };
 
 

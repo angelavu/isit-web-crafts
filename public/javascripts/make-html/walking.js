@@ -80,23 +80,23 @@ define(['display', 'utilities'], function(display, utilities) {
     Walking.prototype.runWalk = function(radioWalkType) {
         display.clear();
         switch (radioWalkType) {
-            case 'qSingle':
-                var requestQuery = walkSingle(radioWalkType);
-                makersWalk(requestQuery);
-                break;
-            case 'qPaired':
-                var requestQueries = walkPaired();
+        case 'qSingle':
+            var requestQuery = walkSingle(radioWalkType);
+            makersWalk(requestQuery);
+            break;
+        case 'qPaired':
+            var requestQueries = walkPaired();
 
-                function pairCallback(requestIndex) {
-                    if (requestIndex < requestQueries.length) {
-                        makersWalk(requestQueries[requestIndex], requestIndex, pairCallback);
-                    }
+            function pairCallback(requestIndex) {
+                if (requestIndex < requestQueries.length) {
+                    makersWalk(requestQueries[requestIndex], requestIndex, pairCallback);
                 }
+            }
 
-                makersWalk(requestQueries[0], 0, pairCallback);
-                break;
-            default:
-                display.showDebug('Walk type not found');
+            makersWalk(requestQueries[0], 0, pairCallback);
+            break;
+        default:
+            display.showDebug('Walk type not found');
         }
     };
 

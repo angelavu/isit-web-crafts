@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import firebase from 'firebase';
 
 class ShowUser extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             baseDir: 'unknown',
@@ -13,25 +13,13 @@ class ShowUser extends Component {
     }
 
     getUserData = () => {
-        let that = this;
-
-        firebase.database()
-            .ref('/configuration/users/' + this.props.user + '/base-dir')
-            .once('value')
-            .then(function(snapshot) {
-                const baseDir =  snapshot.val();
-                that.setState({baseDir: baseDir});
-                console.log('baseDir: ' + baseDir);
-            });
-
-        firebase.database()
-            .ref('/configuration/users/' + this.props.user + '/bootswatch')
-            .once('value')
-            .then(function(snapshot) {
-                const bootswatch = snapshot.val();
-                that.setState({bootswatch: bootswatch});
-                console.log('bootswatch: ' + bootswatch);
-            });
+        const that = this;
+        const path = '/configuration/users/' + this.props.user;
+        firebase.database().ref(path).once('value').then(function (snapshot) {
+            const user = snapshot.val();
+            console.log(user);
+            that.setState({baseDir: user['base-dir'], bootswatch: user.bootswatch});
+        });
     };
 
     render() {
@@ -51,8 +39,8 @@ class ShowUser extends Component {
 
 const mapStateToProps = (state) => {
     return {
-            user: state.userName
-    }
+        user: state.userName
+    };
 };
 
 ShowUser = connect(mapStateToProps)(ShowUser);

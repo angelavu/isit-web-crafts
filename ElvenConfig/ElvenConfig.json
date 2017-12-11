@@ -1,82 +1,80 @@
 {
-  "configuration": {
-    "users": {
-      "vu": {
-        "base-dir": "/home/ubuntu/",
-        "bootswatch": "cosmo",
-        "most-recent-date": "2017-08-14",
-        "site-dirs": [
-          "Documents/AllSite",
-          "Git/CloudNotes/Isit320"
-        ],
-        "destination-dirs": [
-          "/var/www/html/AllSite/",
-          "/home/charlie/Git/charliecalvert.github.io/books/CloudNotes/Isit320/"
-        ],
-        "destination-dirs-extra": [
-          {
-            "base": "/var/www/html/",
-            "extra": ""
-          },
-          {
-            "base": "/var/www/html/Assignments/",
-            "extra": "Assignments"
-          }
-        ]
-      },
-      "calvert": {
-        "base-dir": "/home/charlie/",
-        "bootswatch": "cosmo",
-        "most-recent-date": "2017-08-14",
-        "site-dirs": [
-          "Documents/AllSite",
-          "Git/CloudNotes/Isit320"
-        ],
-        "destination-dirs": [
-          "/var/www/html/AllSite/",
-          "/home/charlie/Git/charliecalvert.github.io/books/CloudNotes/Isit320/"
-        ],
-        "destination-dirs-extra": [
-          {
-            "base": "/var/www/html/",
-            "extra": ""
-          },
-          {
-            "base": "/var/www/html/Assignments/",
-            "extra": "Assignments"
-          }
-        ]
-      }
+  "users": {
+    "vu": {
+      "base-dir": "/home/ubuntu/",
+      "bootswatch": "cosmo",
+      "most-recent-date": "2017-08-14",
+      "site-dirs": [
+        "Documents/AllSite",
+        "Git/CloudNotes/Isit320"
+      ],
+      "destination-dirs": [
+        "/var/www/html/AllSite/",
+        "/home/charlie/Git/charliecalvert.github.io/books/CloudNotes/Isit320/"
+      ],
+      "destination-dirs-extra": [
+        {
+          "base": "/var/www/html/",
+          "extra": ""
+        },
+        {
+          "base": "/var/www/html/Assignments/",
+          "extra": "Assignments"
+        }
+      ]
     },
-    "selectedElvenImages": [
-      "california1",
-      "california2"
-    ],
-    "elvenImages": [
-      {
-        "name": "doc",
-        "baseDir": "The base directory where the images to be processed are found",
-        "cloudPath": "Base string found in markdown files",
-        "createSmallImages": true
-      },
-      {
-        "name": "california",
-        "baseDir": "/var/www/html/images",
-        "cloudPath": "/images",
-        "createSmallImages": true
-      },
-      {
-        "name": "california1",
-        "baseDir": "/var/www/html/images",
-        "cloudPath": "https://s3.amazonaws.com/s3bucket01.elvenware.com",
-        "createSmallImages": true
-      },
-      {
-        "name": "california2",
-        "baseDir": "/var/www/html/images",
-        "cloudPath": "/images",
-        "createSmallImages": true
-      }
-    ]
-  }
+    "calvert": {
+      "base-dir": "/home/charlie/",
+      "bootswatch": "cosmo",
+      "most-recent-date": "2017-08-14",
+      "site-dirs": [
+        "Documents/AllSite",
+        "Git/CloudNotes/Isit320"
+      ],
+      "destination-dirs": [
+        "/var/www/html/AllSite/",
+        "/home/charlie/Git/charliecalvert.github.io/books/CloudNotes/Isit320/"
+      ],
+      "destination-dirs-extra": [
+        {
+          "base": "/var/www/html/",
+          "extra": ""
+        },
+        {
+          "base": "/var/www/html/Assignments/",
+          "extra": "Assignments"
+        }
+      ]
+    }
+  },
+  "selectedElvenImages": [
+    "california1",
+    "california2"
+  ],
+  "elvenImages": [
+    {
+      "name": "doc",
+      "baseDir": "The base directory where the images to be processed are found",
+      "cloudPath": "Base string found in markdown files",
+      "createSmallImages": true
+    },
+    {
+      "name": "california",
+      "baseDir": "/var/www/html/images",
+      "cloudPath": "/images",
+      "createSmallImages": true
+    },
+    {
+      "name": "california1",
+      "baseDir": "/var/www/html/images",
+      "cloudPath": "https://s3.amazonaws.com/s3bucket01.elvenware.com",
+      "createSmallImages": true
+    },
+    {
+      "name": "california2",
+      "baseDir": "/var/www/html/images",
+      "cloudPath": "/images",
+      "createSmallImages": true
+    }
+  ]
 }
