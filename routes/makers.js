@@ -30,30 +30,45 @@ router.get('/pixPicker', function(request, response) {
     });
 });
 
-router.get('/config', function(request, response) {
-    'use strict';
-    config.useLocalConfig = false;
-    var user = 'calvert';
-    config.loadAsync()
-        .then(function(configData) {
-            elfLog.nano('CONFIG DATA: ', JSON.stringify(configData, null, 4));
+// router.get('/config', function(request, response) {
+//     'use strict';
+//     config.useLocalConfig = false;
+//     var user = 'calvert';
+//     config.loadAsync()
+//         .then(function(configData) {
+//             elfLog.nano('CONFIG DATA: ', JSON.stringify(configData, null, 4));
+//
+//             var baseDir = config.get(user, 'base-dir');
+//             var siteDirs = config.get(user, 'site-dirs');
+//             var mostRecentDate = config.get(user, 'most-recent-date');
+//             var destinationDirs = config.get(user, 'destination-dirs');
+//             var configSummary = {
+//                 'baseDir': baseDir,
+//                 'mostRecentDate': mostRecentDate,
+//                 'siteDirs': siteDirs,
+//                 'destinationDirs': destinationDirs
+//             };
+//             console.log('Config is:', configSummary);
+//             response.status(200).send(configSummary);
+//         })
+//         .catch(function(err) {
+//             throw err;
+//         });
+// });
 
-            var baseDir = config.get(user, 'base-dir');
-            var siteDirs = config.get(user, 'site-dirs');
-            var mostRecentDate = config.get(user, 'most-recent-date');
-            var destinationDirs = config.get(user, 'destination-dirs');
-            var configSummary = {
-                'baseDir': baseDir,
-                'mostRecentDate': mostRecentDate,
-                'siteDirs': siteDirs,
-                'destinationDirs': destinationDirs
-            };
-            console.log('Config is:', configSummary);
-            response.status(200).send(configSummary);
-        })
-        .catch(function(err) {
-            throw err;
-        });
+router.get('/get-config', function(req, res, next) { 'use strict';
+    try {
+        config.useLocalConfig = false;
+        config.loadAsync()
+            .then(function (configuration) {
+                res.send({ configuration: configuration });
+            })
+            .catch(function (err) {
+                throw err
+            })
+    } catch(e) {
+        throw new Error(e);
+    }
 });
 
 router.get('/makeImages', function(request, response) {
