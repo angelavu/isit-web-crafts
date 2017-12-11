@@ -139,7 +139,8 @@ class MakeHtmlDropDowns extends React.Component {
                         onClick={this.generateHtml}>
                         {this.state.walk}
                     </RaisedButton>
-                    <pre>{JSON.stringify(this.state.configSummary, null, 4)}</pre>
+
+                    <pre id="configSummary">{JSON.stringify(this.state.configSummary, null, 4)}</pre>
                 </div>
             </MuiThemeProvider>
         );

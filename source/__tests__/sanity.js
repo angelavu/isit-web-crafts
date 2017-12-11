@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactHome from '../ReactHome';
+import Main from '../Main';
 import HomeButtons from '../HomeButtons';
 import MakeHtml from '../MakeHtml';
 import MakeHtmlDropDowns from '../MakeHtmlDropDowns';
@@ -16,9 +16,9 @@ describe('WebCrafts Sanity Tests', function () {
         expect(true).toBe(true);
     });
 
-    it('ReactHome renders without crashing', () => {
+    it('Main renders without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<ReactHome/>, div);
+        ReactDOM.render(<Main/>, div);
     });
 
     it('HomeButtons renders without crashing', () => {

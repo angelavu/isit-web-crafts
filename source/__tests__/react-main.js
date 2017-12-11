@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactHome from '../ReactHome';
+import Main from '../Main';
 
 describe('WebCrafts react-main Tests', function () {
 
@@ -10,9 +10,9 @@ describe('WebCrafts react-main Tests', function () {
         expect(true).toBe(true);
     });
 
-    it('loads component ReactHome without crashing', () => {
+    it('loads component Main without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<ReactHome/>, div);
+        ReactDOM.render(<Main/>, div);
     });
 
 });
